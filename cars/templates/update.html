@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}
+
+Update Car
+
+{% endblock title %}
+
+
+
+{% block content %}
+
+<form action = "{% url 'car-update' car.id %}" method= "POST" enctype="multipart/form-data">
+	{%csrf_token%}
+
+	{{form.as_p}}
+
+	<input type="submit" value="Update">
+</form>
+
+
+
+{% endblock content%}
